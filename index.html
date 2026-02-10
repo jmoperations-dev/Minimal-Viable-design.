@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A Peaceful SaaS Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Instrument Serif', 'serif'],
+            },
+            colors: {
+              'alcove-black': '#050505',
+              primary: {
+                50: '#e9e3ff',
+                400: '#6640ff',
+                500: '#5f3ffd',
+              }
+            },
+            animation: {
+              'celestial-drift': 'drift-right 280s linear infinite',
+              'celestial-drift-fast': 'drift-right 180s linear infinite',
+              'planet-breathing': 'breathing 12s ease-in-out infinite',
+            },
+            keyframes: {
+              'drift-right': {
+                '0%': { transform: 'translateX(-50%)' },
+                '100%': { transform: 'translateX(0%)' },
+              },
+              'breathing': {
+                '0%, 100%': { opacity: '0.6', transform: 'scale(1) translateX(-50%)' },
+                '50%': { opacity: '0.8', transform: 'scale(1.05) translateX(-50%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #fff;
+        overflow-x: hidden;
+      }
+      .instrument-serif {
+        font-family: 'Instrument Serif', serif;
+      }
+      .star-canvas {
+        background-image: radial-gradient(circle at center, rgba(255,255,255,0.9) 0.5px, transparent 1.5px);
+        background-size: 300px 300px;
+      }
+      .planet-ring-glow {
+        background: radial-gradient(ellipse at 50% 100%, 
+          rgba(64, 156, 255, 0.4) 0%, 
+          rgba(102, 64, 255, 0.2) 30%, 
+          rgba(20, 184, 166, 0.1) 60%, 
+          transparent 100%);
+      }
+      ::selection {
+        background: rgba(102, 64, 255, 0.3);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+</head>
+  <body class="dark font-sans">
+    <div id="root"></div>
+  </body>
+</html>
